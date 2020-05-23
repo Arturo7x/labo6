@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        td {
+            padding: 0.5rem 3rem;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Apellido
+            </th>
+            <th>
+                nit
+            </th>
+            <th>
+                importancia
+            </th>
+            <th>
+                fecha de ingreso
+            </th>
+        </tr>
+        <tbody>
+        <tr th:each="contribuyente: ${contribuyentes}">
+            <td th:text="${contribuyente.getNombre()}"></td>
+            <td th:text="${contribuyente.getApellido()}"></td>
+            <td th:text="${contribuyente.getS_nit()}"></td>
+            <td th:text="${contribuyente.getC_importancia()}"></td>
+            <td th:text="${contribuyente.getF_fecha_ingreso()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
